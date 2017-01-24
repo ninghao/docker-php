@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev \
   && pecl install zip \
   && docker-php-ext-enable zip \
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-  && docker-php-ext-install gd mysqli pdo_mysql zip opcache redis
+  && docker-php-ext-install gd mysqli pdo_mysql zip opcache redis bcmath
 
 COPY ./config/php.ini /usr/local/etc/php/conf.d/
 COPY ./config/opcache-recommended.ini /usr/local/etc/php/conf.d/
